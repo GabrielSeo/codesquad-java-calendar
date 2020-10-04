@@ -3,18 +3,21 @@ package gabriel.calendar;
 import java.util.Scanner;
 
 public class Calendar {
-	private static final int[] MAX_DAYS = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+	private static final int MAX_DAYS[]= {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+	
 	public int getMaxOfDays(int month) {
 		return MAX_DAYS[month-1];
 	}
 	
-	public static void main(String[] args) {
-		System.out.println("원하는 달을 입력하세요 :");
-		Scanner scanner = new Scanner(System.in); 
-		int month = scanner.nextInt();
+	public static void main(String[] agrs) {
+		System.out.println("월 입력 : ");
+		Scanner scanner = new Scanner(System.in);
+		String mm = scanner.nextLine();
+		int month = Integer.parseInt(mm);
+		scanner.close();
 		Calendar cal = new Calendar();
 		
-		System.out.printf("%d월은 %d일까지 있습니다.",  month, cal.getMaxOfDays(month));
-		scanner.close();
+		System.out.printf("%d월의 마지막 날은 %d일 입니다." ,  month, cal.getMaxOfDays(month));
 	}
+	
 }
