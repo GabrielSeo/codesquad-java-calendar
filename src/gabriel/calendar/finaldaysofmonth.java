@@ -20,6 +20,6 @@ public class finaldaysofmonth {
 			System.out.printf("%d월의 마지막 날은 %d일 입니다.\n", month, cal.getMaxDay(month));
 		}
 		scanner.close();
-		System.out.println("\n 끝");
+		System.out.println("\n 끝났습니다");
 	}
 }
