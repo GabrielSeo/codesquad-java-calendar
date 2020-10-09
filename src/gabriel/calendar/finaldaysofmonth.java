@@ -8,15 +8,25 @@ public class finaldaysofmonth {
 		return days[month - 1];
 	}
 	public static void main(String[] arge) {
-
+		String PROMPT = "cal> "; 
 		Scanner scanner = new Scanner(System.in);
 		finaldaysofmonth cal = new finaldaysofmonth();
 
-		System.out.println("횟수를 입력하세요");
-		int n = scanner.nextInt();
-		for(int i = 0; i < n; i++) {		 
+//		System.out.println("횟수를 입력하세요");
+//		int n = scanner.nextInt();
+		
+//		for(int i = 0; i < n; i++) {		 
+		int month = 1;
+		while(true) {
 			System.out.println("몇 월:");
-			int month = scanner.nextInt();
+			System.out.print(PROMPT); 
+			month = scanner.nextInt();
+			if(month == -1) {
+				break;
+			}
+			if(month > 12) {
+				continue;
+			}
 			System.out.printf("%d월의 마지막 날은 %d일 입니다.\n", month, cal.getMaxDay(month));
 		}
 		scanner.close();
