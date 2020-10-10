@@ -10,8 +10,12 @@ public class Prompt {
 		finaldaysofmonth cal = new finaldaysofmonth();
  
 		int month = 1;
+		int year = 1; 
 		while(true) {
-			System.out.println("몇 월:");
+			System.out.println("몇 년 :");
+			System.out.print(PROMPT); 
+			year = scanner.nextInt(); 
+			System.out.println("몇 월 :");
 			System.out.print(PROMPT); 
 			month = scanner.nextInt();
 			if(month == -1) {
@@ -20,7 +24,7 @@ public class Prompt {
 			if(month > 12) {
 				continue;
 			}
-			cal.printCalendar(2020, month);
+			cal.printCalendar(year, month);
 		}
 		scanner.close();
 		System.out.println("\n 끝났습니다");
