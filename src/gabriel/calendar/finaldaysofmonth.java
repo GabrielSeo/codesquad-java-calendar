@@ -27,15 +27,27 @@ public class finaldaysofmonth {
 		}
 	}
 
-	public void printCalendar(int year, int month) {
-		System.out.printf("    <<%4d년%2d월>>\n", year, month); 
-		System.out.println(" 일  월  화  수  목  금 \n---------------------");
+	public void printCalendar(int year, int month, int weekday) {
+		System.out.printf("   <<%4d년%2d월>>\n", year, month); 
+		System.out.println(" 일  월 화 수 목  금 토  \n  -----------------");
 		
+		// 공백 출력 
+		for(int i = 0; i < weekday; i++) {
+			System.out.print("   "); 
+		}
 		
 		int max = getMaxDay(year, month); 
+		int count = 7-weekday; 
+		int linechanger = 1; 
+		if (count < 7) {
+			linechanger = count;
+		}
+		else {
+			linechanger = 0; 
+		}
 		for(int i = 1; i <= max; i++) {
 			System.out.printf("%3d", i);
-			if(i % 7 == 0) {
+			if(i % 7 == linechanger) {
 				System.out.print("\n");
 			}
 		}
